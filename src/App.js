@@ -1,5 +1,5 @@
 function App() {
-  return <div>hollow world</div>;
+  return <div>hellow world</div>;
 }
 
 export default App;
