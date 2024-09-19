@@ -62,7 +62,7 @@ const SignUp = () => {
           가입하기
         </Link>
       </div>
-      <LoginButton category="signlogin" name="Continue with Google" />
+      {/* <LoginButton category="signlogin" name="Continue with Google" /> */}
     </div>
   );
 };

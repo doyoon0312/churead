@@ -5,9 +5,9 @@ import Nav from '../components/layout/Nav';
 
 const Home = () => {
   return (
-    <div>
+    <div className="h-full pt-20 pb-[74px] overflow-hidden">
       <Header />
-      <main>
+      <main className="h-full overflow-auto">
         <div>
           <ul>
             <FeedItem />
