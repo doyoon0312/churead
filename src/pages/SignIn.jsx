@@ -3,27 +3,15 @@ import InputField from '../components/InputField';
 import LoginButton from '../components/LoginButton';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Login = () => {
-  // logic
+const SignIn = () => {
   const history = useNavigate(); //페이지도 이동 할수 있게 하는 함수'
-
-  const goToHome = () => {
-    history('/');
-  };
 
   const goToSignIn = () => {
     history('/signin'); //이동할 페이지 주소 입력
   };
 
-  // view
   return (
     <div className="text-center px-6">
-      {/* <button type="button" onClick={goToHome}>
-        홈 화면으로 이동
-      </button> */}
-      {/* <Link to={'/'} style={{ color: '#222' }}>
-        홈 화면으로 이동
-      </Link> */}
       <h1 className="flex justify-center">
         <img src="./images/logo.svg" alt="로고" />
       </h1>
@@ -32,9 +20,10 @@ const Login = () => {
       </h3>
       {/* 폼영역 */}
       <form id="longin-form" className="text-center flex flex-col gap-2">
+        <InputField type="text" field="name" />
         <InputField type="text" field="email" />
         <InputField type="password" field="password" />
-        <LoginButton category="login" name="Login" onClick={goToHome} />
+        <LoginButton category="login" name="Create Account" />
       </form>
       <div className="flex justify-center gap-1 py-6">
         <p>계정이 없으신가요?</p>
@@ -42,13 +31,9 @@ const Login = () => {
           가입하기
         </Link>
       </div>
-      <LoginButton
-        category="signlogin"
-        name="Continue with Google"
-        onClick={goToHome}
-      />
+      <LoginButton category="signlogin" name="Continue with Google" />
     </div>
   );
 };
 
-export default Login;
+export default SignIn;

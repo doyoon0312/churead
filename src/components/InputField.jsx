@@ -1,13 +1,12 @@
 import React from 'react';
 
-const InputField = ({ type, placeholder }) => {
+const InputField = ({ type, field }) => {
   return (
     <input
       type={type}
-      placeholder={placeholder}
-      name="Email"
-      className="block rounded-lg border border-gray-500"
-      style={{ backgroundColor: '#F3F5F726' }}
+      placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+      name={field}
+      className="block rounded-lg border border-gray-800 w-full bg-gray-400 text-white placeholder-gray-700 p-5"
     />
   );
 };
