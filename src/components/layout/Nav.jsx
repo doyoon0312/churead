@@ -5,9 +5,11 @@ import { FaPenToSquare } from 'react-icons/fa6';
 import { FaRegPenToSquare } from 'react-icons/fa6';
 import { IoPerson } from 'react-icons/io5';
 import { IoPersonOutline } from 'react-icons/io5';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Nav = () => {
+  const location = useLocation();
+
   const navList = [
     {
       id: 1,
@@ -35,7 +37,8 @@ const Nav = () => {
         {navList.map((nav) => (
           <li key={nav.id}>
             <Link to={nav.pathname} className="block p-6">
-              {nav.icon}
+              {location.pathname === nav.pathname ? nav.activeIcon : nav.icon}
+              {/* {nav.icon} */}
             </Link>
           </li>
         ))}
