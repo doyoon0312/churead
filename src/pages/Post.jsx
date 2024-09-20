@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PostInput from '../components/PostInput';
 
 const Post = () => {
-  const [todoList, setTodolist] = useState();
   return (
     <div className="h-full">
       <header className="fixed max-w-[572px] mx-auto px-4 py-6 text-center top-0 left-0 right-0">
