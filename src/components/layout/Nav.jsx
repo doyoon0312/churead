@@ -9,21 +9,21 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <nav>
-      <ul>
+    <nav className="fixed bottom-0 bg-churead-gray-800 w-full max-w-[572px]">
+      <ul className="flex justify-center">
         <li>
-          <Link to="/">
-            <TiHome />
+          <Link to="/" className="block p-6">
+            <TiHome size={'24px'} />
           </Link>
         </li>
         <li>
-          <Link to="/">
-            <FaPenToSquare />
+          <Link to="/" className="block p-6">
+            <FaPenToSquare size={'24px'} />
           </Link>
         </li>
         <li>
-          <Link to="/">
-            <IoPerson />
+          <Link to="/" className="block p-6">
+            <IoPerson size={'24px'} />
           </Link>
         </li>
         {/* <TiHomeOutline /> */}
