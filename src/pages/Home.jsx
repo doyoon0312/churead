@@ -7,6 +7,11 @@ import { initiaFeedList } from '../data/response';
 const Home = ({ churead }) => {
   const [feedList, setFeedList] = useState(initiaFeedList);
 
+  const handleDelete = (selectedItem) => {
+    const filterList = feedList.filter((item) => item.id !== selectedItem.id);
+    setFeedList(filterList);
+  };
+
   useEffect(() => {
     if (!churead) return;
     const newFeed = {
@@ -28,7 +33,7 @@ const Home = ({ churead }) => {
         <div>
           <ul>
             {feedList.map((feed) => (
-              <FeedItem key={feed.id} data={feed} />
+              <FeedItem key={feed.id} data={feed} onDelete={handleDelete} />
             ))}
           </ul>
         </div>

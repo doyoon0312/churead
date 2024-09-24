@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Post from './pages/Post';
 import Profile from './pages/Profile';
 import { useState } from 'react';
+import Edit from './pages/Edit';
 
 function App() {
   const [churead, setChuread] = useState('');
@@ -23,6 +24,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/post" element={<Post onPost={handlePost} />} />
+            <Route path="/edit" element={<Edit />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </BrowserRouter>

@@ -2,9 +2,22 @@ import React, { useState } from 'react';
 import { FaPen } from 'react-icons/fa';
 import { FaTrashAlt } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
-const FeedItem = ({ data }) => {
+const FeedItem = ({ data, onDelete }) => {
+  const history = useNavigate();
   const { userName, userProfileImage, churead, likeCount } = data;
+
+  const handleEdit = () => {
+    history('/edit');
+  };
+
+  const handleDelete = () => {
+    const ok = window.confirm('정말로 삭제하시겠습니까?');
+    if (ok) {
+      onDelete(data);
+    }
+  };
 
   return (
     <li className="border-t border-churead-gray-300 border-opacity-15 px-6 py-3">
@@ -20,10 +33,18 @@ const FeedItem = ({ data }) => {
             <span className="font-bold">{userName}</span>
             {/* 수정, 삭제 버튼 작성하기 */}
             <div className="ml-auto flex gap-1">
-              <button type="button" className="max-w-6 p-1">
+              <button
+                type="button"
+                className="max-w-6 p-1"
+                onClick={handleEdit}
+              >
                 <FaPen />
               </button>
-              <button type="button" className="max-w-6 p-1">
+              <button
+                type="button"
+                className="max-w-6 p-1"
+                onClick={handleDelete}
+              >
                 <FaTrashAlt />
               </button>
             </div>
